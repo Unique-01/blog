@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="blog">
+    {% for post in post_list %}
+    <div class="blogpost">
+        <a class="blogpost" href="{% url 'post_detail' post.slug %}">
+            <div>
+                <h4>{{post.title}}</h4>
+                <small class="author" >{{post.author}} | {{post.created_on}} </small>
+                <p class="content">{{post.content | truncatechars:'150'}}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

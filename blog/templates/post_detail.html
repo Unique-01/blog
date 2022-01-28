@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'Home' %}">&lAarr; Previous</a><br><br>
+    <h4>{{post.title}}</h4>
+    <p>{{post.content}}</p>
+{% endblock content %}
+    
