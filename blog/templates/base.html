@@ -15,7 +15,7 @@
         <nav>
             <div class="unique">Unique</div>
             <ul>
-                <a href="">
+                <a href="{% url 'Home' %}">
                     <li>Home</li>
                 </a>
                 <a href="">
@@ -24,16 +24,15 @@
                 <a href="">
                     <li>Contact</li>
                 </a>
+                <a href="{% url 'admin:index' %}" target="blank">
+                    <li>Admin</li>
+                </a>
             </ul>
         </nav>
         <header>
             <h1> WELCOME TO UNIQUE BLOG</h1>
             <p class="giving"><i> giving you the best and latest news in Nigeria</i></p>
         </header>
-        <form class="search" action=" " method="get">
-            <input type="text" name='q'>
-            <button>&#128269</button>
-        </form>
     </div>
     {% block content %}
 

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+<form class="search" action="" method="get">
+    <input type="text" name='q' placeholder="Search....">
+    <button>&#128269</button>
+</form>
 <div class="blog">
     {% for post in post_list %}
     <div class="blogpost">
@@ -11,6 +15,8 @@
             </div>
         </a>
     </div>
+        {% empty %}
+        <p><i>No Search Result Found</i></p>
     {% endfor %}
 </div>
 {% endblock content %}

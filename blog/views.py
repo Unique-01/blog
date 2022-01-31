@@ -5,16 +5,17 @@ from django.views import generic
 # Create your views here.
 
 class PostList(generic.ListView):
-    # queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html/"
-    
+
     # For the search bar
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
-            return Post.objects.filter(title__icontains=query)
+            object_list = Post.objects.filter(title__icontains=query) or Post.objects.filter(content__icontains=query)
         else:
-            return Post.objects.filter(status=1).order_by('-created_on')
+            object_list = Post.objects.filter(status=1).order_by('-created_on')
+
+        return object_list
 
 class PostDetail(generic.DetailView):
     model = Post

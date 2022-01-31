@@ -3,7 +3,6 @@
     padding: 0;
 }
 body{
-    /* background-color: turquoise; */
     background-color: lightcyan;
 }
 a{
@@ -24,13 +23,11 @@ li{
 ul{
     display: flex;
     gap: 30px;
-    /* padding-right: 20px; */
     font-size: small;
 }
 nav{
     display: flex;
     justify-content: space-between;
-    /* background-color: bisque; */
     background-color: lightblue;
     padding: 10px 10px;
 }
@@ -40,38 +37,26 @@ nav{
 }
 h4{
     text-transform: uppercase;
-    /* color: orangered; */
     color: blue;
     padding-left: 3px;
 }
 .blog{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-    /* grid-template-columns: auto auto auto auto auto; */
+    grid-template-columns: repeat(4,1fr) ;
     gap: 20px;  
-    /* border: 1px solid black; */
-    /* padding: 0px 3px 0px; */
     margin-top: 20px;
     padding: 0px 10px;
-    /* background-color: burlywood; */
 }
 .blogpost{
-    /* border: 1px solid black; */
     box-shadow: 0px 0px 1px;
-    /* background-color: blanchedalmond; */
-    /* background-color: bisque; */
-    /* background-color: blue; */
     background-color: lightblue ;
     color: rgb(2, 2, 87);
-    /* color: cyan; */
     padding-top: 15px;
 }
 small{
     display: flex;
     justify-content: flex-end;
-    /* font-size: 12px; */
     margin-top: -5px;
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 .author{
     padding: 10px 7px;
@@ -88,8 +73,6 @@ header{
     margin-top: 10px;
 }
 h1{
-    /* color: white; */
-    /* background-color: blue; */
     color: rgb(13, 13, 197);
     font-family: cursive;
     font-weight: 900;
@@ -115,9 +98,28 @@ button{
     background-color: lightblue;
     border: 1px solid white;
     border-radius: 3px;
-
-    /* box-shadow: 0px 0px 2px; */
 }
 button:hover{
     box-shadow: 0px 0px 3px;
+}
+@media screen and (max-width:450px){
+    .blog{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    h1{
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:800px) and (min-width:450px) {
+    .blog{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (min-width:800px) and (max-width:1100px) {
+    .blog{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
 }
