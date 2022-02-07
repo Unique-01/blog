@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* background-color: azure; */
+    /* background: url('./images.jpeg'); */
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-size: cover;
+    /* background: url('../static/blog/images.jpeg') */
+    /* background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg'); */
+    /* background-image: url('./sarah_muenz__winter_wonderland__4k.jpg'); */
+    background-image: url('./thierry_marthy__unnamed__4k.jpg');
+}
+a{
+    text-decoration: none;
+}
+.nav-list{
+    color: black;
+    font-family: cursive;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 20px;
+}
+li{
+    list-style: none;
+    /* color: blue; */
+    color: white;
+    padding: 0px  10px;
+}
+li:hover{
+    color: white;
+    font-size: large;
+}
+ul{
+    display: flex;
+    /* gap: 30px; */
+    /* padding: 0px 10px 0px ; */
+    justify-content: space-between;
+    font-size: small;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: lightblue; */
+    background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg');
+    background-size: contain;
+    padding: 10px 10px;
+    /* position:fixed; */
+
+}
+.unique{
+    text-transform: uppercase;
+    color: blue;
+}
+.post-title{
+    text-transform: uppercase;
+    /* color: blue; */
+    color: white;
+    padding-left: 3px;
+}
+.blog{
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+    /* gap: 30px;   */
+    margin: 20px 10px 0px;
+    padding: 0px 10px;
+}
+.blogpost{
+    box-shadow: 0px 0px 1px;
+    /* background-color: lightblue ; */
+    background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg');
+    /* background-image: url('./sarah_muenz__winter_wonderland__4k.jpg'); */
+
+    background-size: contain;
+    color: rgb(2, 2, 87);
+    padding-top: 15px;
+    margin: 10px;
+    /* height: 180px; */
+}
+.blogpost:hover{
+    background-color: rgb(154, 214, 235);
+}
+.post-author{
+    padding: 10px 7px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -5px;
+    color: blue;
+}
+.post-content{
+    padding: 3px;
+    /* color: blue; */
+    color: white;
+    /* color: black; */
+    font-weight: 900;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color:lightblue;
+    margin-top: 10px;
+    background-image: url('./sarah_muenz__winter_wonderland__4k.jpg');
+
+}
+h1{
+    /* color: rgb(13, 13, 197); */
+    font-family: cursive;
+    font-weight: 900;
+    font-size: 50px;
+}
+.giving{
+    /* color:blue; */
+    color: purple;
+    text-transform: capitalize;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+.search-form{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    gap: 20px;
+}
+.search-input{
+    width: 250px;
+}
+.search-btn{
+    width: 30px;
+    background-color: lightblue;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.search-btn:hover{
+    box-shadow: 0px 0px 3px;
+}
+.paginate{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0px ;
+}
+.next-btn, .prev-btn{
+    background-color: rgb(138, 138, 243);
+    color: white;
+    padding:  10px 20px;
+    border-radius: 5px;
+}
+.next-btn:hover, .prev-btn:hover{
+    background-color: rgb(64, 64, 240);
+}
+.comment-form, .comment-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+    box-shadow: 0px 0px 10px -5px gray ;
+    padding: 20px;
+    width: 25%;
+    align-items:baseline;
+    /* background-color: rgb(213, 238, 247); */
+
+}
+.comment-form-head{
+    color: blue;
+}
+.post-detail-div{
+    background-color: white;
+}
+.comment-name{
+    text-transform: capitalize;
+}
+.comment-div{
+    margin: 20px 10px  ;
+    gap: 20px;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+}
+.comment-name-date{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.comment-date{
+    /* color: gray; */
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.comment{
+    color: white;
+}
+summary{
+    cursor: pointer;
+    color: blue;
+}
+
+
+
+
+
+
+@media screen and (max-width:450px){
+    .blog{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    h1{
+        font-size: 35px;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:800px) and (min-width:450px) {
+    .blog{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (min-width:800px) and (max-width:1100px) {
+    .blog{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}

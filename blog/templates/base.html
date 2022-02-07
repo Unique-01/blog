@@ -7,38 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Blog</title>
-    <link rel="stylesheet" href="{% static 'blog/blogcss.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
 </head>
 
 <body>
+    <style>
+        body{
+            /* background: url('../static/blog/images.jpeg') */
+        }
+    </style>
     <div>
         <nav>
             <div class="unique">Unique</div>
             <ul>
-                <a href="{% url 'Home' %}">
+                <a class="nav-list" href="{% url 'Home' %}">
                     <li>Home</li>
                 </a>
-                <a href="">
+                <a class="nav-list" href="">
                     <li>About</li>
                 </a>
-                <a href="">
+                <a class="nav-list" href="">
                     <li>Contact</li>
                 </a>
-                <a href="{% url 'admin:index' %}" target="blank">
+                <a class="nav-list" href="{% url 'admin:index' %}" target="blank">
                     <li>Admin</li>
                 </a>
             </ul>
         </nav>
         <div>
             <header>
-                <h1> WELCOME TO UNIQUE BLOG</h1>
-                <p class="giving"><i> giving you the best and latest news in Nigeria</i></p>
+                <h1> WELCOME TO MY AWESOME BLOG</h1>
+               <marquee behavior="slidepointer" direction="right"> <p class="giving"><i> giving you the best and latest news in Nigeria</i></p></marquee>
             </header>
         </div>
     </div>
     {% block content %}
 
     {% endblock content %}
+    
+    {% block paginate %}
+        
+    {% endblock paginate %}
+        
     <footer>
         <small>Copyright &copy; unique 2022</small>
     </footer>

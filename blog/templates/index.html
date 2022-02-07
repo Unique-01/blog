@@ -1,22 +1,60 @@
 {% extends 'base.html' %}
 {% block content %}
-<form class="search" action="" method="get">
-    <input type="text" name='q' placeholder="Search....">
-    <button>&#128269</button>
+
+<!-- Search Bar -->
+<form class="search-form" action="" method="get">
+    <input class="search-input" type="text" name='q' placeholder="Search....">
+    <button class="search-btn">&#128269</button>
 </form>
+
+<!-- Post Display -->
 <div class="blog">
+  
     {% for post in post_list %}
+  
     <div class="blogpost">
+  
         <a class="blogpost" href="{% url 'post_detail' post.slug %}">
+  
             <div>
-                <h4>{{post.title}}</h4>
-                <small class="author" >{{post.author}} | {{post.created_on}} </small>
-                <p class="content">{{post.content | truncatechars:'150'}}</p>
+                <h4 class="post-title">{{post.title}}</h4>
+                <small class="post-author">{{post.author}} | {{post.created_on}} </small>
+                <!-- <p class="content">{{post.content | truncatechars:'200'}}</p> -->
+                <p class="post-content">{{post.content | truncatewords:'30'}}</p>
             </div>
+  
         </a>
+  
     </div>
-        {% empty %}
-        <p><i>No Search Result Found</i></p>
+  
+    <!-- if there is no Search Return -->
+    {% empty %}
+    <p><i>No Search Result Found</i></p>
+  
     {% endfor %}
+
 </div>
+
 {% endblock content %}
+
+<!-- pagination  -->
+{% block paginate %}
+
+<div class="paginate">
+
+    {% if is_paginated %}
+
+    <!-- Previous button pargination -->
+        {% if page_obj.has_previous %}
+            <a class="prev-btn" href="?page={{page_obj.previous_page_number}}">&laquo; PREV</a>
+        {% endif %}
+
+    <!-- Next Button pargination-->
+        {% if page_obj.has_next %}
+            <a class="next-btn" href="?page={{page_obj.next_page_number}}">NEXT &raquo;</a>
+        {% endif %}
+
+    {% endif %}
+</div>
+
+{% endblock paginate %}
