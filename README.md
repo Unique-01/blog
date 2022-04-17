@@ -1,11 +1,8 @@
 # Blog
-This is a fully functional Blog website built using django (python), html, css.
+This is a fully functional Blog website built using django (python), html, css, bootstrap.
 
 ## Prerequisites
 * Python 3.7 (lower versions also work correctly)
-* Django 2.0 or higher
-* Pillow
-* Django-crispy-forms
 
 ## Setting up the project in your system
 Download the whole project. You will get a zip file named "Bloapp.zip" in your download folder. Extract the file at any location.
@@ -14,6 +11,10 @@ Download the whole project. You will get a zip file named "Bloapp.zip" in your d
 Now open the terminal and change directory to the location where the project folder is located. Then chage directory using this command
 ```sh
 $ cd Blogapp/blog
+```
+Now install requirements
+```sh
+$ pip3 install -r requirements.txt
 ```
 Now to create a localhost in your system use this command
 ```sh
