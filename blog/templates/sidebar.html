@@ -1,0 +1,22 @@
+{% block popularpost %}
+    <div class="popular-posts-list">
+        <h3>Popular Posts</h3>
+        {% for post in popularposts %}
+            {% if post.comments.count >= 4 %}
+                <div class="popular-posts">
+                    <a href="{% url 'post_detail' post.slug %}">
+                        <h6>{{ post.title }}</h6>
+                        <small>
+                            <p class="text-muted">
+                                {{ post.author }} | {{ post.created_on }}
+                            </p>
+                            <p>
+                                {{ post.content | truncatewords:'5' }}
+                            </p>
+                        </small>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock popularpost %}

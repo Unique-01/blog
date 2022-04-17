@@ -4,20 +4,20 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 STATUS = (
-    (0,'Draft'),
-    (1,'Publish')
+    (0, 'Draft'),
+    (1, 'Publish')
 )
+
 
 class Post(models.Model):
 
     title = models.CharField(max_length=50)
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     slug = models.SlugField()
-    status = models.IntegerField(choices=STATUS,default=0)
-
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         verbose_name = ("post")
@@ -29,11 +29,13 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("post_detail", kwargs={"pk": self.pk})
 
+
 class Comment(models.Model):
     """Model definition for Comment."""
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
-    name = models.CharField( max_length=50)
-    email = models.EmailField( max_length=254)
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254, null=True, blank=True)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
@@ -47,5 +49,3 @@ class Comment(models.Model):
     def __str__(self):
         """Unicode representation of Comment."""
         return f"Comment {self.body} by {self.name}"
-
-

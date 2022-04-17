@@ -1,69 +1,65 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
-
-<div class="post-detail-div">
+<mainclass="post-detail-div">
     {% block content %}
-    <!-- post detail -->
-    <div>
-        <h4 class="post-title">{{post.title}}</h4>
-        <small class="post-author">{{post.author}} | {{post.created_on}}</small>
-        <p class="post-content">{{post.content}}</p>
-    </div>
-
-    <!-- comments display -->
-    <div class="comment-container">
-
-        <div class="comment-div">
-
-            <details>
-
-                <summary>
-                    <h4>{{comments.count}} Comments</h4>
-                </summary>
-
-                <a href="{% url 'post_detail' post.slug %}">&#x21bb; comments</a>
-
-                {% for comment in comments %}
-
-                <div>
-
-                    <div class="comment-name-date">
-                        <h5 class="comment-name comment" >{{comment.name}}</h5>
-                        <small class="comment-date">{{comment.created_on}}</small>
+        <!-- sidebar -->
+        <aside class="side-bar ml-auto">
+            <!--side bar toggler on small screen-->
+            <button class="btn btn-primary d-lg-none"
+                    data-toggle="collapse"
+                    data-target="#sidebar"
+                    aria-expanded="false"
+                    aria-controls="collapseExample">
+                Popular Posts
+            </button>
+            <div id="sidebar" class="collapse d-lg-block">{% include 'sidebar.html' %}</div>
+        </aside>
+        <!-- post detail -->
+        <article class="sub-post-detail-div">
+            <h4 class="post-title">{{ post.title }}</h4>
+            <small class="post-author text-muted">{{ post.author }} | {{ post.created_on }}</small>
+            <p class="post-content">
+                {{ post.content }}
+            </p>
+        </article>
+        <!-- comments and comment form display -->
+        <section class="comment-container">
+            <div class="sub-comment-container">
+                <div class="comment-div">
+                    <h4 class="comment-count">{{ comments.count }} Comment(s)</h4>
+                    <!-- To reload the page -->
+                    <a href="{% url 'post_detail' post.slug %}">&#x21bb; comments</a>
+                    <!-- To show comments -->
+                    <div class="comments">
+                        {% for comment in comments %}
+                            <div>
+                                <div class="comment-name-date">
+                                    <h5 class="comment-name comment">{{ comment.name }}</h5>
+                                    <small class="comment-date">{{ comment.created_on }}</small>
+                                </div>
+                                <small class="comment">{{ comment.body| linebreaks }}</small>
+                            </div>
+                        {% endfor %}
                     </div>
-
-                    <small class="comment">{{comment.body| linebreaks}}</small>
-
                 </div>
-
-                {% endfor %}
-
-            </details>
-
-        </div>
-
-        <div>
-            {% if new_comment %}
-            <p>Your comment is awaiting moderation</p>
-        </div>
-
-        {% else %}
-
-        <div>
-            <!-- comment form -->
-            <form action="" method="post">
-                <h4 class="comment-form-head">Leave a Comment</h4>
-                {% csrf_token %}
-                {{comment_form | crispy}}
-                <button class="comment-btn" type="submit">Submit</button>
-            </form>
-
-        </div>
-
-        {% endif %}
-
-    </div>
-
+                {% if new_comment %}
+                    <div>
+                        <p class="new-comment">
+                            Your comment is awaiting moderation
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="comment-form-div">
+                        <!-- comment form -->
+                        <form action="" method="post">
+                            <h4 class="comment-form-head">Leave a Comment</h4>
+                            {% csrf_token %}
+                            {{ comment_form | crispy }}
+                            <button class="comment-btn" type="submit">Submit</button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
     {% endblock content %}
-
-</div>
+</mainclass=>

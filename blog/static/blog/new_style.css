@@ -1,0 +1,217 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    background-color: rgb(240, 240, 240);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#logo{
+    
+    padding: 5px;
+    border-radius: 10px 20px;
+    background: linear-gradient(to right,purple,violet);
+    color: white;
+    font-weight: 900;
+    font-size: small;
+}
+.nav-link{
+    font-family: 'Courier New', Courier, monospace;
+}
+.header{
+    padding: 20px 40px;
+    background-color: cornflowerblue;
+    color: white;
+}
+.header h3{
+    font-size: 2.5em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.search-form{
+    margin: 10px;
+}
+.search-input{
+    width: 15rem;
+    height: 2rem;
+    padding: 0px 5px;
+}
+.search-btn{
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    border-radius: 5px;
+}
+.blogpost, .sub-post-detail-div{
+    margin: 20px 0px 20px 100px;
+    box-shadow: 0px 0px 15px 10px gainsboro;
+    background-color: white;
+    padding: 20px;
+    width: 60%;
+}
+.post-title{
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+.post-content{
+    padding: 10px 0px 20px;
+    line-height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sub-blog-container{
+    margin: 40px 0px;
+}
+.popular-posts-list{
+    margin: 40px 20px;
+}
+.side-bar{
+    float: right;
+    margin: 50px 60px;
+    background-color: white;
+    box-shadow: 0px 0px 15px 10px gainsboro;
+    border-radius: 10px;
+}
+.popular-posts{
+    padding: 5px 0px;
+    line-height: 2px;
+}
+.popular-posts-list h3{
+    color: red;
+}
+.paginate {
+    display: inline-block;
+}
+.pagination-container{
+    text-align: center;
+}
+.paginate a ,.paginate span{
+    color: black;
+    float: left;
+    padding: 4px 14px;
+    border: 1px solid #ddd;
+    transition: background-color .3s;
+}
+.paginate a:hover:not(#active){
+    background-color:#ddd;
+}
+.paginate a:first-child{
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+.paginate a:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#active{
+    background-color: red;
+    color: white;
+}
+footer{
+    margin: 20px;
+    
+}
+.post-btn{
+    background-color: violet;
+    color: white;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 5px;
+}
+.post-btn:hover{
+    background-color: rgb(235, 94, 235);
+}
+
+.sub-comment-container{
+    display: flex;
+    margin: 50px 100px;
+    gap: 120px;
+}
+#id_name,#id_body{
+    width: 260px;
+    padding: 8px;
+    border: 1px solid gray;
+}
+#div_id_body{
+    margin-top: 10px;
+}
+
+.comment-count{
+    background-color: white;
+    box-shadow: 0px 0px 15px 10px gainsboro;
+    padding: 10px;
+    width: 200px;
+}
+.comments,.comment-form-div{
+    background-color: white;
+    box-shadow: 0px 0px 15px 10px gainsboro;
+    padding: 10px;
+    border-radius: 5px;
+    width: 280px;
+}
+.comment-btn{
+    padding: 10px;
+    border-radius: 20px 40px;
+    border: none;
+    margin: 10px;
+    width: 250px;
+    background-color: rgb(240, 59, 240);
+    color: white;
+}
+.comment-btn:hover{
+    background-color: violet;
+}
+.new-comment{
+    background-color: white;
+    box-shadow: 0px 0px 15px 10px gainsboro;
+    color: green;
+    padding: 10px;
+}
+@media screen and (max-width:700px){
+    .side-bar{
+        width: 17em;
+        float: none;
+        margin: 10px 0px;
+        padding: 3px;
+    }
+    .search-input{
+        width: 12em;
+    }
+    .popular-posts-list,.search-form{
+        margin: 10px;
+        font-size: 1em;
+        line-height: normal;
+    }
+    .popular-posts{
+        line-height: normal;
+    }
+    .blogpost{
+        margin: 0px 20px 20px;
+        width: 90%;
+    }
+    .paginate a ,.paginate span{
+        padding: 2px 10px;
+        font-size: 0.7em;
+    }
+    .sub-post-detail-div{
+        margin: 20px;
+        width: 85%;
+    }
+    .sub-comment-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        margin: 10px;
+    }
+    
+}

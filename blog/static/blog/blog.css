@@ -13,7 +13,8 @@ body{
     /* background: url('../static/blog/images.jpeg') */
     /* background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg'); */
     /* background-image: url('./sarah_muenz__winter_wonderland__4k.jpg'); */
-    background-image: url('./thierry_marthy__unnamed__4k.jpg');
+    /* background-image: url('./thierry_marthy__unnamed__4k.jpg'); */
+    background-color: white;
 }
 a{
     text-decoration: none;
@@ -49,7 +50,7 @@ nav{
     display: flex;
     justify-content: space-between;
     /* background-color: lightblue; */
-    background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg');
+    /* background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg'); */
     background-size: contain;
     padding: 10px 10px;
     /* position:fixed; */
@@ -62,20 +63,21 @@ nav{
 .post-title{
     text-transform: uppercase;
     /* color: blue; */
-    color: white;
+    /* color: white; */
+    color: black;
     padding-left: 3px;
 }
 .blog{
     display: grid;
-    grid-template-columns: repeat(3,1fr) ;
+    grid-template-columns: repeat(2,1fr) ;
     /* gap: 30px;   */
     margin: 20px 10px 0px;
     padding: 0px 10px;
 }
 .blogpost{
     box-shadow: 0px 0px 1px;
-    /* background-color: lightblue ; */
-    background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg');
+    background-color: gray;
+    /* background-image: url('./jeff_morgan__stub_stewart_iridium_flare__4k.jpg'); */
     /* background-image: url('./sarah_muenz__winter_wonderland__4k.jpg'); */
 
     background-size: contain;
