@@ -23,14 +23,14 @@
             </p>
         </article>
         <!-- comments and comment form display -->
-        <section class="comment-container">
-            <div class="sub-comment-container">
-                <div class="comment-div">
+        <section class="comment-container container" >
+            <div class="sub-comment-container row">
+                <div class="comment-div col-md-5">
                     <h4 class="comment-count">{{ comments.count }} Comment(s)</h4>
                     <!-- To reload the page -->
                     <a href="{% url 'post_detail' post.slug %}">&#x21bb; comments</a>
                     <!-- To show comments -->
-                    <div class="comments">
+                    <div class="comments ">
                         {% for comment in comments %}
                             <div>
                                 <div class="comment-name-date">
@@ -49,13 +49,13 @@
                         </p>
                     </div>
                 {% else %}
-                    <div class="comment-form-div">
+                    <div class="comment-form-div col-md-4">
                         <!-- comment form -->
                         <form action="" method="post">
                             <h4 class="comment-form-head">Leave a Comment</h4>
                             {% csrf_token %}
                             {{ comment_form | crispy }}
-                            <button class="comment-btn" type="submit">Submit</button>
+                            <button class="btn btn-primary" type="submit">Submit</button>
                         </form>
                     </div>
                 {% endif %}

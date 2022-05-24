@@ -131,19 +131,19 @@ footer{
     background-color: rgb(235, 94, 235);
 }
 
-.sub-comment-container{
+/* .sub-comment-container{
     display: flex;
     margin: 50px 100px;
     gap: 120px;
-}
-#id_name,#id_body{
+} */
+/* #id_name,#id_body{
     width: 260px;
     padding: 8px;
     border: 1px solid gray;
 }
 #div_id_body{
     margin-top: 10px;
-}
+} */
 
 .comment-count{
     background-color: white;
@@ -156,16 +156,10 @@ footer{
     box-shadow: 0px 0px 15px 10px gainsboro;
     padding: 10px;
     border-radius: 5px;
-    width: 280px;
 }
-.comment-btn{
-    padding: 10px;
-    border-radius: 20px 40px;
-    border: none;
-    margin: 10px;
-    width: 250px;
-    background-color: rgb(240, 59, 240);
-    color: white;
+
+.comment-form-div{
+    max-height: 500px;
 }
 .comment-btn:hover{
     background-color: violet;
